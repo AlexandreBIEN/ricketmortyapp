@@ -12,38 +12,22 @@ const Single = () => {
   // Récupération de l'id dans l'url
   const {id} = useParams();
 
-  // listes des épisodes où le personnage apparaît
   const[characterEpisodes, setCharacterEpisodes] = useState([]);
 
-  // Nom du personnage
-  const[characterName, setCharacterName] = useState("");
-  // Localisation du personnage
-  const[characterLocation, setCharacterLocation] = useState("");
-  // Espèce du personnage
-  const[characterSpecies, setCharacterSpecies] = useState("");
-  // Genre du personnage
-  const[characterGender, setCharacterGender] = useState("");
-  // Image du personnage
-  const[characterImage, setCharacterImage] = useState("");
+  const[characters, setCharacters] = useState([]);
 
   // Requête vers l'api qui récupère les informations du personnage
   useEffect(() => {
     axios.get(`https://rickandmortyapi.com/api/character/${id}`)
     .then(function (response) {
       let res = response.data;
-      // Enregistre les informations dans des variables
-      setCharacterEpisodes(res.episode);
-      setCharacterName(res.name);
-      setCharacterLocation(res.location.name);
-      setCharacterSpecies(res.species);
-      setCharacterGender(res.gender);
-      setCharacterImage(res.image);
+      setCharacters(res);
+      setCharacterEpisodes(characters.episode);
     })
     .catch(function (error) {
       console.log(error);
     })
   }, []);
-
   return (
     <div>
       <Header />
@@ -51,12 +35,12 @@ const Single = () => {
         <div className="container">
           <div className="row pt-4 pb-4">
             <div className="col-4 text-end">
-              <img src={characterImage} alt={`image de ${characterName}`} />
+              <img src={characters.name} alt={`image de ${characters.name}`} />
             </div>
             <div className="col-6">
-              <h2>{characterName}</h2>
-              <p>{characterLocation}</p>
-              <p>{characterName} est un spécimen {characterSpecies} de type {characterGender}</p>
+              <h2>{characters.name}</h2>
+              <p>{characters.location.name}</p>
+              <p>{characters.name} est un spécimen {characters.species} de type {characters.gender}</p>
               <div className='episodes'>
                 <h2>Episodes :</h2>
                 <ul>
