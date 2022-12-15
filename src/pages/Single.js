@@ -53,7 +53,7 @@ const Single = () => {
             <div className="col-4 text-end">
               <img src={characterImage} alt={`image de ${characterName}`} />
             </div>
-            <div className="col-6">
+            <div className="col-sm">
               <h2>{characterName}</h2>
               <p>{characterLocation}</p>
               <p>{characterName} est un spécimen {characterSpecies} de type {characterGender}</p>
