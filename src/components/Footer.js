@@ -3,9 +3,7 @@ import '../styles/Footer.scss';
 
 const Footer = () => {
   return (
-    <div>
-      <p className='text-white'>La Manu Le Havre 2022</p>
-    </div>
+    <p className='text-footer text-white'>La Manu Le Havre 2022</p>
   )
 }
 

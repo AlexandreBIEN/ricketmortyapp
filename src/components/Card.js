@@ -10,10 +10,11 @@ const Card = (props) => {
         <img className='card-item-image' src={props.image} alt={`image de ${props.name}`}/>
         <p className='card-item-name'>{(props.status == "Dead") ? <FontAwesomeIcon icon={faCross} /> : ""} {props.name}</p>
         <p className='card-item-location'><FontAwesomeIcon icon={faLocationDot} /> {props.location}</p>
+        {/* Redirection vers la page détail avec l'id en paramètre */}
         <NavLink to={`/details/${props.id}`}>
-        <div className='text-end'>
-          <button className='card-btn'>Détails <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
-        </div>
+          <div className='text-end'>
+            <button className='card-btn'>Détails <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
+          </div>
         </NavLink>
     </div>
   )

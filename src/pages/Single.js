@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 
 const Single = () => {
 
+  // Récupération de l'id dans l'url
   const {id} = useParams();
 
   const[characterEpisodes, setCharacterEpisodes] = useState([]);
@@ -19,6 +20,7 @@ const Single = () => {
   const[characterGender, setCharacterGender] = useState("");
   const[characterImage, setCharacterImage] = useState("");
 
+  // Requête vers l'api qui récupère les informations du personnage
   useEffect(() => {
     axios.get(`https://rickandmortyapi.com/api/character/${id}`)
     .then(function (response) {
@@ -51,6 +53,7 @@ const Single = () => {
               <div className='episodes'>
                 <h2>Episodes :</h2>
                 <ul>
+                  {/* Boucle sur le composant Episodes avec comme propriété l'url de l'épisode */}
                   {characterEpisodes.map((episode) => {
                     return <Episodes ep={episode}/>
                   })}
