@@ -12,8 +12,8 @@ const CardList = () => {
   // numéro de la page demandé
   const[page, setPage] = useState(1);
 
-  // Requête vers l'api qui récupère les 20 premier personnage
-  async function getCharacter(page) {
+  // Fonction qui fait une requête vers l'api et récupère les 20 premier personnages
+  const getCharacter = (page) => {
     axios.get('https://rickandmortyapi.com/api/character?page=' + page)
     .then(function (response) {
       // On renseigne les informations des personnages dans une variable
