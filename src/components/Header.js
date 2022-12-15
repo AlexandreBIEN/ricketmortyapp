@@ -11,7 +11,7 @@ const Header = () => {
     <div className='text-center text-white'>
       {/* Redirection du logo vers la page accueil */}
       <NavLink to='/home'>
-        <img className='logo-rick-et-morty' src={logo}/>
+        <img className='logo-rick-et-morty' src={logo} alt='logo rick et morty'/>
       </NavLink>
       <p>Rick et Morty : apprentissage de react sans prise de tête</p>
       {/* Logos html / css / js / react*/}
