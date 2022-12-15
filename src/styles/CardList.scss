@@ -6,3 +6,26 @@
     grid-gap: 20px;
     justify-content: center;
 }
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .card-btn {
+        margin-bottom: 5px;
+        padding: 10px;
+        color: white;
+        background-color: rgb(58, 58, 58);
+        border: none;
+        cursor: pointer;
+    }
+    
+    .card-btn:hover {
+        background-color: rgb(115, 115, 115);
+    }
+}
+
+.text-white {
+    color: white;
+}
