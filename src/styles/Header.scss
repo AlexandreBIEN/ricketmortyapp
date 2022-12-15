@@ -22,3 +22,9 @@ body {
     height: 50px;
     margin: 10px;
 }
+
+@media (max-width: 465px) {
+    .logo-rick-et-morty {
+        height: 90px;
+    }
+}
