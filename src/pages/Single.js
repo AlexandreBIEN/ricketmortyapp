@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/App.scss';
+import Footer from '../components/Footer';
 
 const Single = () => {
 
@@ -59,6 +60,7 @@ const Single = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   )
 }
